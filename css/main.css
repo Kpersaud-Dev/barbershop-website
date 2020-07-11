@@ -107,119 +107,133 @@ html, body {
   margin: 0;
   padding: 0;
   color: grey;
+  width: 100%;
+  height: 100%;
+  font-family: 'Galada', cursive;
+  /* Overflow from navbar animation */
+  overflow-x: hidden;
 }
 
-h1 {
-  font-family: 'Galada', cursive;
-}
 
 h2 {
   font-size: 2em;
-  font-family: 'Galada', cursive;
-}
-
-h3 {
-  font-family: 'Galada', cursive;
-}
-
-h4 {
-  font-family: 'Galada', cursive;
 }
 
 /***** Header Styles *****/
 
 .main-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: flex-start;
   flex-flow: row wrap;
+  color: lightgrey;
   background-image: url("../img/header-background.png");
   background-size: cover;
-  color: lightgrey;
+  z-index: -1;
+  opacity: .9;
+  padding-bottom: 1em;
 }
 
-.barber-icon {
-  height: 65px;
-  width: 65px;
-  border-radius: 50%;
-  opacity: .9;
+.logo {
+  padding-left: 2em;
+}
+
+.navbar h1 {
+  font-size: 2em;
+  padding-right: .75em;
+  letter-spacing: 2px;
+  width: 100%;
 }
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: black;
   color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  
+}
+
+.navbar-links {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in;
 }
 
 .navbar-links ul {
-  margin: 0
-  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding-right: 3em;
+  width: 100%;
+  font-size: .8em;
 }
+
+.navbar-links li {
+}
+
 
 .navbar-links li a {
   text-decoration: none;
   color: white;
-  padding: 1rem;
-  display: block;
-}
-
-.navbar-links li:hover {
-  background-color: #555;
-}
-
-.toggle-button {
-  position: absolute;
-  top: .75rem;
-  right: 1rem;
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
-}
-
-.toggle-button .bar {
-  height: 3px;
-  width: 100%;
-  background-color: white;
-  border-radius: 10px;
-}
-
-.toggle-button {
-  display: flex;
-}
-
-.navbar-links {
- display: none;
- width: 100%;
-}
-
-.navbar {
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.navbar-links ul {
-  width: 100%;
-  flex-direction: column;
-}
-
-.navbar-links li {
+  padding: 1em;
   text-align: center;
+  font-size: 1.5em;
 }
 
-.navbar-links li a {
-  padding: .5rem 1rem;
-}
-
-.navbar-links.active {
+.navbar-links ul li {
+  list-style: none;
   display: flex;
 }
 
-.navbar ul {
-  list-style-type: none;
+.burger {
+  display: block;
+  cursor: pointer;
 }
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+
 
 /***** Services Styles *****/
 
@@ -227,9 +241,9 @@ h4 {
 }
 
 .services {
-  background-color: black;
+  background-color:  whitesmoke;
   padding: 1em 1.5em;
-
+  color: black;
 }
 
 .section-header {
@@ -273,8 +287,23 @@ footer {
   justify-content: center;
   align-items: center;
   flex-flow: row wrap;
+  color: whitesmoke;
+  position: relative;
+  background-color: black;
+  padding: 1em;
+}
+
+.hours::after {
+  content: '';
   background-image: url('../img/chair.png');
   background-size: cover;
+  opacity: 0.85;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 
 .hours h3 {
@@ -282,7 +311,7 @@ footer {
 }
 
 .contact {
-  background-color: black;
+  background-color: #333;
   padding: 1em;
 }
 
