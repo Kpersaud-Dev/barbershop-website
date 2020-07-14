@@ -175,16 +175,17 @@ h2 {
   font-size: .8em;
 }
 
-.navbar-links li {
-}
-
-
 .navbar-links li a {
   text-decoration: none;
   color: white;
   padding: 1em;
   text-align: center;
   font-size: 1.5em;
+}
+
+.navbar-links li a:hover {
+  background-color: grey;
+  opacity: .6;
 }
 
 .navbar-links ul li {
@@ -337,6 +338,8 @@ footer {
   text-align: center;
 }
 
+.map {
+}
 
 
 
@@ -429,8 +432,121 @@ footer {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+@media only screen and (min-width: 768px) {
+  /* Tablet Styles */
+
+  /* Navbar */
+
+  .navbar-links {
+    transform: translateX(150%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .nav-active {
+    transform: translateX(0%);
+  }
+
+  /* About Us */
+
+  .about {
+    padding: 2em;
+  }
+
+  .about .content {
+    letter-spacing: 1px;
+  }
+
+  /* Hours */
+
+  .hours {
+    display: flex;
+    flex-flow: column wrap;
+  }
+
+  .hours .content {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  /* Contact */
+
+  .contact .content {
+    display: flex;
+    justify-content: space-around;
+  }
+
+}
+
+@media only screen and (min-width: 1200px) {
+  /* Desktop Styles */
+
+
+  /* Removing Burger Navbar */
+
+  .burger {
+    display: none;
+  }
+
+  .navbar-links {
+    transform: none;
+    transition: none;
+  }
+
+  /* Services Styles */
+
+  .services {
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    align-items: center;
+  }
+
+  .section-header {
+    display: flex;
+    flex-flow: column wrap;
+  }
+
+  .prices {
+    width: 40%;
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
+
+  /* About Us Styles */
+
+  .about {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about .content {
+    width: 55%;
+    padding: 2em 0;
+    letter-spacing: 2px;
+    line-height: 40px;
+  }
+
+  /* Footer Styles */
+
+  .hours .content {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+
+  .contact .content{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+  }
+
+
+
 }
 
 @media print,
